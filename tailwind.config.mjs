@@ -11,6 +11,22 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      animation: {
+        marquee: 'marquee 10s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { backgroundPosition: '0 0' },
+          '100%': { backgroundPosition: '-1429px 0' },
+        },
+      },
+      spacing: {
+        '1429px': '1429px',
+        '365px': '365px',
+      },
     },
   },
   plugins: [],
