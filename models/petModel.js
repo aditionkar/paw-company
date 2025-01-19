@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const petSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "users", // Reference the `users` collection
+    ref: "users", 
     required: true,
   },
   type: {
@@ -29,11 +29,10 @@ const petSchema = new mongoose.Schema({
   },
   allergies: {
     type: String,
-    required: false, // This field is optional
+    required: false, 
   },
 });
 
-// Ensure the model is only created once
 const Pet = mongoose.models.pets || mongoose.model("pets", petSchema);
 
 export default Pet;

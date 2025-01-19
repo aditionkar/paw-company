@@ -47,7 +47,7 @@ const CreateProfile = () => {
     setIsSubmitting(true);
     setSuccessMessage("");
   
-    // Prepare the data as a plain JSON object
+    
     const dataToSend = {
       name: formData.name,
       age: formData.age,
@@ -55,16 +55,16 @@ const CreateProfile = () => {
       height: formData.height,
       allergies: formData.allergies,
       type: petType,
-      userId: "67874ff545365cea6414ee13", // Replace with the actual userId
+      userId: "67874ff545365cea6414ee13", // Need to be replaced with the actual userId
     };
   
     try {
       const response = await fetch("/api/pets/save", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json", // Set the content type to JSON
+          "Content-Type": "application/json", 
         },
-        body: JSON.stringify(dataToSend), // Send the data as a JSON string
+        body: JSON.stringify(dataToSend), 
       });
   
       if (response.ok) {
