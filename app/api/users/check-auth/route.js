@@ -8,10 +8,6 @@ export async function GET(req) {
       return NextResponse.json({ isLoggedIn: false });
     }
 
-    // Add token verification logic here if needed (e.g., JWT verification)
-    // const isValid = verifyToken(token);
-    // if (!isValid) return NextResponse.json({ isLoggedIn: false });
-
     return NextResponse.json({ isLoggedIn: true });
   } catch (error) {
     return NextResponse.json(

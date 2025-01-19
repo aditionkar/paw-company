@@ -4,8 +4,8 @@ import React from 'react'
 
 function PetProfile() {
   return (
-    <div >
-      <p>Before creating a profile for pet :</p>
+    <div > 
+      <p>Before creating a profile for pet    :</p>
       <CreateProfile/>
       <p>After creating a profile for pet</p>
       <ProfileCard/>

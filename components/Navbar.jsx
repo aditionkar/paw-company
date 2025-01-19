@@ -10,31 +10,33 @@ function Navbar() {
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isDrawerOpen, setDrawerOpen] = useState(false);
-  const [loading, setLoading] = useState(true); // Loading state for initial check
+  const [loading, setLoading] = useState(true); 
 
   // Check login status
   useEffect(() => {
     const checkAuth = async () => {
       try {
         const response = await axios.get("/api/users/check-auth");
-        setIsLoggedIn(response.data.isLoggedIn);  // Set login status
+        setIsLoggedIn(response.data.isLoggedIn); 
       } catch (error) {
         console.error("Error checking auth:", error);
-        setIsLoggedIn(false); // Default to false if error occurs
+        setIsLoggedIn(false);
       } finally {
-        setLoading(false);  // Stop loading once check is done
+        setLoading(false); 
       }
     };
-    checkAuth();  // Run on initial render to check login state
+    checkAuth(); 
   }, []);
+
+  
 
   const logout = async (event) => {
     event.preventDefault();
     try {
       const response = await axios.get("/api/users/logout");
       if (response.data.success) {
-        setIsLoggedIn(false);  // Update state immediately on logout
-        router.push("/login");  // Redirect to login page
+        setIsLoggedIn(false);  
+        router.push("/login"); 
       } else {
         console.error("Logout failed");
       }
@@ -44,7 +46,7 @@ function Navbar() {
   };
 
   if (loading) {
-    return <div>Loading...</div>; // Display loading message while checking auth
+    return <div>Loading...</div>; 
   }
 
   return (
